@@ -1,7 +1,6 @@
 "use strict";
 
-const FILM_CARD_COUNT = 4;
-const FILM_LIST_EXTRA_BLOCK_COUNT = 1;
+const FILM_CARD_COUNT = 5;
 const POPULAR_FILM_CARD_COUNT = 2;
 
 const createProfileTemplate = () => {
@@ -314,17 +313,13 @@ render(filmsWrapperElement, createFilmsListTemplate());
 const filmsListElement = mainElement.querySelector(`.films-list`);
 const filmsListContainer = filmsListElement.querySelector(`.films-list__container`);
 
-render(filmsListContainer, createFilmCardTemplate());
-
 repeat(FILM_CARD_COUNT, () => {
   render(filmsListContainer, createFilmCardTemplate());
 });
 
 render(filmsListElement, createShowMoreButtonTemplate());
 
-render(filmsWrapperElement, createFilmsListExtraTemplate());
-
-repeat(FILM_LIST_EXTRA_BLOCK_COUNT, () => {
+repeat(POPULAR_FILM_CARD_COUNT, () => {
   render(filmsWrapperElement, createFilmsListExtraTemplate());
 });
 
