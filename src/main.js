@@ -330,7 +330,7 @@ repeat(FILM_LIST_EXTRA_BLOCK_COUNT, () => {
 
 const filmsListExtraElements = filmsWrapperElement.querySelectorAll(`.films-list--extra`);
 
-filmsListExtraElements.forEach(element => {
+filmsListExtraElements.forEach((element) => {
   const filmsListExtraContainer = element.querySelector(`.films-list__container`);
   repeat(POPULAR_FILM_CARD_COUNT, () => {
     render(filmsListExtraContainer, createFilmCardTemplate());
