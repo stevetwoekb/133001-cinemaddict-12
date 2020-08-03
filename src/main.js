@@ -7,6 +7,7 @@ import {createFilmCardTemplate} from './view/film-card.js';
 import {createShowMoreButtonTemplate} from './view/show-more-button.js';
 import {createFilmsListExtraTemplate} from './view/films-list-extra.js';
 import {createFooterStatisticTemplate} from './view/footer-statistic.js';
+import {createFilmDetailsTemplate} from './view/film-details.js';
 import {render, repeat} from './utils.js';
 
 const FILM_CARD_COUNT = 5;
@@ -49,3 +50,7 @@ filmsListExtraElements.forEach((element) => {
 const footerElement = document.querySelector(`.footer`);
 
 render(footerElement, createFooterStatisticTemplate());
+
+const bodyElement = document.querySelector(`body`);
+
+render(bodyElement, createFilmDetailsTemplate());
