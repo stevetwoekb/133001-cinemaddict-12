@@ -28,13 +28,20 @@ export const getRandomArrayItem = (array) => {
   return array[randomIndex];
 };
 
-export const getRandomArrayFromArray = (prototype, maxLengthNewArr) => {
-  const count = getRandomInteger(1, maxLengthNewArr);
-  const newArr = new Set();
-  while (newArr.size < count) {
-    newArr.add(getRandomArrayItem(prototype));
+const shuffleArray = (items) => {
+  const newItems = items.slice();
+  for (let i = newItems.length - 1; i > 0; i--) {
+    let j = getRandomInteger(0, newItems.length);
+    let temp = newItems[i];
+    newItems[i] = newItems[j];
+    newItems[j] = temp;
   }
-  return Array.from(newArr);
+  return newItems;
+};
+
+
+export const getRandomArrayFromArray = (itmes) => {
+  return shuffleArray(itmes).slice(0, getRandomInteger(0, itmes.length));
 };
 
 

@@ -1,15 +1,15 @@
 import {createProfileTemplate} from "./view/profile.js";
 import {createNavigationTemplate} from './view/navigation.js';
 import {createSortingTemplate} from './view/sorting.js';
-import {createFilmsWrapperTemplate } from './view/films-wrapper.js';
-import {createFilmsListTemplate } from './view/films-list.js';
-import {createFilmCardTemplate } from './view/film-card.js';
-import {createShowMoreButtonTemplate } from './view/show-more-button.js';
-import {createFilmsListExtraTemplate } from './view/films-list-extra.js';
-import {createFooterStatisticTemplate } from './view/footer-statistic.js';
-import {createFilmDetailsTemplate } from './view/film-details.js';
-import {generateFilmCard } from './mock/film-card.js';
-import {generateFilter } from './mock/filter.js';
+import {createFilmsWrapperTemplate} from './view/films-wrapper.js';
+import {createFilmsListTemplate} from './view/films-list.js';
+import {createFilmCardTemplate} from './view/film-card.js';
+import {createShowMoreButtonTemplate} from './view/show-more-button.js';
+import {createFilmsListExtraTemplate} from './view/films-list-extra.js';
+import {createFooterStatisticTemplate} from './view/footer-statistic.js';
+import {createFilmDetailsTemplate} from './view/film-details.js';
+import {generateFilmCard} from './mock/film-card.js';
+import {generateFilter} from './mock/filter.js';
 import {render} from './utils.js';
 
 const FILM_CARD_COUNT = 25;

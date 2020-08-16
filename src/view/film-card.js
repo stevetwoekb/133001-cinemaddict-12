@@ -12,7 +12,7 @@ export const createFilmCardTemplate = (filmCard) => {
   const duration = formatTime(filmCard.duration);
   const commentsCount = filmCard.comments.length;
   const description = getShortDescription(filmCard.description, 140);
-  const gener = filmCard.genres[0];
+  const genre = filmCard.genres[0];
   const releaseYear = filmCard.releaseDate.getFullYear();
 
   return (
@@ -23,7 +23,7 @@ export const createFilmCardTemplate = (filmCard) => {
         <p class="film-card__info">
           <span class="film-card__year">${releaseYear}</span>
           <span class="film-card__duration">${duration}</span>
-          <span class="film-card__genre">${gener}</span>
+          <span class="film-card__genre">${genre}</span>
         </p>
         <img src="images/posters/${filmCard.poster}" alt="" class="film-card__poster">
         <p class="film-card__description">${description}</p>

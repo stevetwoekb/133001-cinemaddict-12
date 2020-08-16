@@ -16,7 +16,7 @@ const createCommentsTemplate = (comment) => {
       <div>
         <p class="film-details__comment-text">${comment.text}</p>
         <p class="film-details__comment-info">
-          <span class="film-details__comment-author">${comment.autor}</span>
+          <span class="film-details__comment-author">${comment.author}</span>
           <span class="film-details__comment-day">${comment.data.getFullYear()}</span>
           <button class="film-details__comment-delete">Delete</button>
         </p>
@@ -46,7 +46,7 @@ export const createFilmDetailsTemplate = (filmCard) => {
               <div class="film-details__poster">
                 <img class="film-details__poster-img" src="./images/posters/${filmCard.poster}" alt="">
 
-                <p class="film-details__age">18+</p>
+                <p class="film-details__age">${filmCard.ageRating}+</p>
               </div>
 
               <div class="film-details__info">

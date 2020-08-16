@@ -44,43 +44,67 @@ const GENRES = [
   `Mystery`,
 ];
 
+const MIN_FILM_RATING = 0;
+const MAX_FILM_RATING = 10;
+
+const MIN_DURATION = 60;
+const MAX_DURATION = 200;
+
+const MIN_AGE_RATING = 0;
+const MAX_AGE_RATING = 18;
+
+const MIN_WRITES = 1;
+const MAX_WRITES = 4;
+
+const MIN_ACTORS = 5;
+const MAX_ACTORS = 12;
+
+const MIN_RELEASE_DATE = 1950;
+const MAX_RELEASE_DATE = 2020;
+
+const MIN_COMMENTS = 2;
+const MAX_COMMENTS = 7;
+
 const NAME = [`Anthony`, `Anne`, `Herald`, `Richard`, `Dan`, `Mary`, `Erich`, `Kate`];
 const SURNAME = [`Mann`, `von Stroheim`, `Hughes`, `Weil`, `Pit`, `Brown`, `Duryea`, `Ivanov`];
 
-const generateRating = () => {
-  return getRandomFloat(0, 10).toFixed(1);
+const GENRES_COUNT = 5;
+const DESCRIPTIONS_COUNT = 5;
+
+const generateRating = (min, max) => {
+  return getRandomFloat(min, max).toFixed(1);
 };
 
 const getRandomPeople = () => {
   return (`${getRandomArrayItem(NAME)} ${getRandomArrayItem(SURNAME)}`);
 };
-const gegetRandomPeoples = (min, max) => {
+const getRandomPeoples = (min, max) => {
   const count = getRandomInteger(min, max);
   return Array.from({length: count}, getRandomPeople).join`, `;
 };
 
 
 export const generateFilmCard = () => {
-  const getComments = [];
-  repeat(getRandomInteger(2, 7), () => {
-    getComments.push(generateComment());
+  const commentsList = [];
+  repeat(getRandomInteger(MIN_COMMENTS, MAX_COMMENTS), () => {
+    commentsList.push(generateComment());
   });
 
   return {
     poster: getRandomArrayItem(POSTERS),
     title: getRandomArrayItem(TITLES),
     originaTitle: getRandomArrayItem(TITLES),
-    rating: generateRating(),
+    rating: generateRating(MIN_FILM_RATING, MAX_FILM_RATING),
     director: getRandomPeople(),
-    writers: gegetRandomPeoples(1, 4),
-    actors: gegetRandomPeoples(5, 12),
-    releaseDate: getRandomDate(1950, 2020),
-    duration: getRandomInteger(60, 200),
+    writers: getRandomPeoples(MIN_WRITES, MAX_WRITES),
+    actors: getRandomPeoples(MIN_ACTORS, MAX_ACTORS),
+    releaseDate: getRandomDate(MIN_RELEASE_DATE, MAX_RELEASE_DATE),
+    duration: getRandomInteger(MIN_DURATION, MAX_DURATION),
     country: `USA`,
-    genres: getRandomArrayFromArray(GENRES, 5),
-    description: getRandomArrayFromArray(DESCRIPTIONS, 5).join(` `),
-    ageRating: `18`,
-    comments: getComments,
+    genres: getRandomArrayFromArray(GENRES, GENRES_COUNT),
+    description: getRandomArrayFromArray(DESCRIPTIONS, DESCRIPTIONS_COUNT).join(` `),
+    ageRating: getRandomInteger(MIN_AGE_RATING, MAX_AGE_RATING),
+    comments: commentsList,
     watchlist: getRandomBoolean(),
     watched: getRandomBoolean(),
     favorites: getRandomBoolean(),

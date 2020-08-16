@@ -9,7 +9,7 @@ const COMMENTS = [
   `Almost two hours? Seriously?`,
 ];
 
-const AUTORS = [
+const AUTHORS = [
   `Tim Macoveev`,
   `John Doe`,
   `Ann Jonson`,
@@ -18,11 +18,15 @@ const AUTORS = [
   `Jeny Stark`,
 ];
 
+const MIN_COMMENT_DATE = 2018;
+const MAX_COMMENT_DATE = 2020;
+
+
 export const generateComment = () => {
   return {
     text: getRandomArrayItem(COMMENTS),
-    autor: getRandomArrayItem(AUTORS),
-    data: getRandomDate(2018, 2020),
+    author: getRandomArrayItem(AUTHORS),
+    data: getRandomDate(MIN_COMMENT_DATE, MAX_COMMENT_DATE),
     emoji: getRandomArrayItem(EMOJIIS),
   };
 };
