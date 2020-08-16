@@ -68,6 +68,8 @@ const MAX_COMMENTS = 7;
 const NAME = [`Anthony`, `Anne`, `Herald`, `Richard`, `Dan`, `Mary`, `Erich`, `Kate`];
 const SURNAME = [`Mann`, `von Stroheim`, `Hughes`, `Weil`, `Pit`, `Brown`, `Duryea`, `Ivanov`];
 
+const COUNTRY = [`USA`, `RUSSIA`, `ITALY`, `CANADA`];
+
 const GENRES_COUNT = 5;
 const DESCRIPTIONS_COUNT = 5;
 
@@ -93,14 +95,14 @@ export const generateFilmCard = () => {
   return {
     poster: getRandomArrayItem(POSTERS),
     title: getRandomArrayItem(TITLES),
-    originaTitle: getRandomArrayItem(TITLES),
+    originalTitle: getRandomArrayItem(TITLES),
     rating: generateRating(MIN_FILM_RATING, MAX_FILM_RATING),
     director: getRandomPeople(),
     writers: getRandomPeoples(MIN_WRITES, MAX_WRITES),
     actors: getRandomPeoples(MIN_ACTORS, MAX_ACTORS),
     releaseDate: getRandomDate(MIN_RELEASE_DATE, MAX_RELEASE_DATE),
     duration: getRandomInteger(MIN_DURATION, MAX_DURATION),
-    country: `USA`,
+    country: getRandomArrayItem(COUNTRY),
     genres: getRandomArrayFromArray(GENRES, GENRES_COUNT),
     description: getRandomArrayFromArray(DESCRIPTIONS, DESCRIPTIONS_COUNT).join(` `),
     ageRating: getRandomInteger(MIN_AGE_RATING, MAX_AGE_RATING),

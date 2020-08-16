@@ -31,10 +31,8 @@ export const getRandomArrayItem = (array) => {
 const shuffleArray = (items) => {
   const newItems = items.slice();
   for (let i = newItems.length - 1; i > 0; i--) {
-    let j = getRandomInteger(0, newItems.length);
-    let temp = newItems[i];
-    newItems[i] = newItems[j];
-    newItems[j] = temp;
+    const j = getRandomInteger(0, newItems.length - 1);
+    [newItems[j], newItems[i]] = [newItems[i], newItems[j]];
   }
   return newItems;
 };
