@@ -68,7 +68,7 @@ const MAX_COMMENTS = 7;
 const NAME = [`Anthony`, `Anne`, `Herald`, `Richard`, `Dan`, `Mary`, `Erich`, `Kate`];
 const SURNAME = [`Mann`, `von Stroheim`, `Hughes`, `Weil`, `Pit`, `Brown`, `Duryea`, `Ivanov`];
 
-const COUNTRY = [`USA`, `RUSSIA`, `ITALY`, `CANADA`];
+const COUNTRY = [`USA`, `RUSSIA`, `ITALY`, `CANADA`, `France`];
 
 const GENRES_COUNT = 5;
 const DESCRIPTIONS_COUNT = 5;
