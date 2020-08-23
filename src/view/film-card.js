@@ -1,6 +1,6 @@
-import {formatTime} from '../utils.js';
+import {formatTime, createElement} from '../utils.js';
 
-export const createFilmCardTemplate = (filmCard) => {
+const createFilmCardTemplate = (filmCard) => {
   const getShortDescription = (text, maxLength) => {
     let shortDescription = text;
     if (text.length > maxLength) {
@@ -16,8 +16,7 @@ export const createFilmCardTemplate = (filmCard) => {
   const releaseYear = filmCard.releaseDate.getFullYear();
 
   return (
-    `
-      <article class="film-card">
+    `<article class="film-card">
         <h3 class="film-card__title">${filmCard.title}</h3>
         <p class="film-card__rating">${filmCard.rating}</p>
         <p class="film-card__info">
@@ -33,7 +32,30 @@ export const createFilmCardTemplate = (filmCard) => {
           <button class="film-card__controls-item button film-card__controls-item--mark-as-watched">Mark as watched</button>
           <button class="film-card__controls-item button film-card__controls-item--favorite">Mark as favorite</button>
         </form>
-      </article>
-    `
+      </article>`
   );
 };
+
+
+export default class FilmCard {
+  constructor(filmCard) {
+    this._element = null;
+    this._filmCard = filmCard;
+  }
+
+  getTemplate() {
+    return createFilmCardTemplate(this._filmCard);
+  }
+
+  getElement() {
+    if (!this._element) {
+      this._element = createElement(this.getTemplate());
+    }
+
+    return this._element;
+  }
+
+  removeElement() {
+    this._element = null;
+  }
+}

@@ -1,7 +1,29 @@
 import moment from "moment";
 
-export const render = (container, template, place = `beforeend`) => {
+export const RenderPosition = {
+  AFTERBEGIN: `afterbegin`,
+  BEFOREEND: `beforeend`
+};
+
+export const render = (container, element, place = RenderPosition.BEFOREEND) => {
+  switch (place) {
+    case RenderPosition.AFTERBEGIN:
+      container.prepend(element);
+      break;
+    case RenderPosition.BEFOREEND:
+      container.append(element);
+      break;
+  }
+};
+
+export const renderTemplate = (container, template, place = `beforeend`) => {
   container.insertAdjacentHTML(place, template);
+};
+
+export const createElement = (template) => {
+  const newElement = document.createElement(`div`);
+  newElement.innerHTML = template;
+  return newElement.firstChild;
 };
 
 export const repeat = (count, fn) => {
@@ -39,7 +61,7 @@ const shuffleArray = (items) => {
 
 
 export const getRandomArrayFromArray = (itmes) => {
-  return shuffleArray(itmes).slice(0, getRandomInteger(0, itmes.length));
+  return shuffleArray(itmes);
 };
 
 
