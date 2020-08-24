@@ -8,7 +8,7 @@ import ShowMoreButton from './view/show-more-button.js';
 import FilmsExtraRatedList from './view/films-extra-rated-list.js';
 import FilmsExtraCommentsList from './view/films-extra-comments-list.js';
 import FooterStatistic from './view/footer-statistic.js';
-import FilmCardDetails from './view/film-details.js';
+import FilmCardDetails from './view/film-card-details.js';
 import {generateFilmCard} from './mock/film-card.js';
 import {generateFilter} from './mock/filter.js';
 import {render, RenderPosition} from './utils.js';
