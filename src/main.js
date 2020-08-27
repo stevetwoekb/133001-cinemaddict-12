@@ -45,7 +45,7 @@ const renderFilmCard = (container, filmCard) => {
   const onEscKeyDown = (evt) => {
     if (evt.key === `Escape` || evt.key === `Esc`) {
       evt.preventDefault();
-      closePopup(evt);
+      closePopup();
     }
   };
 
@@ -57,12 +57,13 @@ const renderFilmCard = (container, filmCard) => {
     }
 
     render(footerElement, filmDetailsComponent.getElement(), RenderPosition.AFTEREND);
-    filmDetailsComponent.getElement().querySelector(`.film-details__close-btn`).addEventListener(`click`, closePopup);
+    filmDetailsComponent.getElement().querySelector(`.film-details__close-btn`).addEventListener(`click`, () => {
+      closePopup();
+    });
     document.addEventListener(`keydown`, onEscKeyDown);
   };
 
-  const closePopup = (e) => {
-    e.preventDefault();
+  const closePopup = () => {
     document.querySelector(`.film-details`).remove();
     filmDetailsComponent.removeElement();
     document.removeEventListener(`keydown`, onEscKeyDown);
