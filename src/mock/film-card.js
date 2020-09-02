@@ -1,4 +1,5 @@
-import {getRandomInteger, getRandomFloat, getRandomArrayItem, getRandomArrayFromArray, getRandomBoolean, getRandomDate, repeat} from '../utils';
+import {getRandomInteger, getRandomFloat, getRandomArrayItem, getRandomArrayFromArray, repeat} from '../utils/common.js';
+import {getRandomBoolean, getRandomDate} from '../utils/film.js';
 import {generateComment} from './comment.js';
 
 const POSTERS = [

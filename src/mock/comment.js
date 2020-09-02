@@ -1,4 +1,5 @@
-import {getRandomArrayItem, getRandomDate} from '../utils';
+import {getRandomArrayItem} from '../utils/common.js';
+import {getRandomDate} from '../utils/film.js';
 
 const EMOJIIS = [`smile`, `sleeping`, `puke`, `angry`];
 

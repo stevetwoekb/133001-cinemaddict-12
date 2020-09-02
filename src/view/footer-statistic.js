@@ -1,4 +1,6 @@
-import {getRandomInteger, createElement} from '../utils.js';
+import Abstract from "./abstract.js";
+
+import {getRandomInteger} from '../utils/common.js';
 
 const createFooterStatisticTemplate = () => {
   const statMock = getRandomInteger(1000, 25000);
@@ -10,24 +12,8 @@ const createFooterStatisticTemplate = () => {
 };
 
 
-export default class FooterStatistic {
-  constructor() {
-    this._element = null;
-  }
-
+export default class FooterStatistic extends Abstract {
   getTemplate() {
     return createFooterStatisticTemplate();
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }
