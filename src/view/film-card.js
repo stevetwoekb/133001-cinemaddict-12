@@ -1,4 +1,5 @@
-import {formatTime, createElement} from '../utils.js';
+import {formatTime} from '../utils/film.js';
+import Abstract from './abstract.js';
 
 const createFilmCardTemplate = (filmCard) => {
   const getShortDescription = (text, maxLength) => {
@@ -37,25 +38,27 @@ const createFilmCardTemplate = (filmCard) => {
 };
 
 
-export default class FilmCard {
+export default class FilmCard extends Abstract {
   constructor(filmCard) {
-    this._element = null;
+    super();
     this._filmCard = filmCard;
+    this._clickHandler = this._clickHandler.bind(this);
   }
 
   getTemplate() {
     return createFilmCardTemplate(this._filmCard);
   }
 
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
+  _clickHandler() {
+    this._callback.click();
   }
 
-  removeElement() {
-    this._element = null;
+  setClickHandler(callback) {
+    this._callback.click = callback;
+    this.getElement()
+      .querySelectorAll(`.film-card__poster, .film-card__comments, .film-card__title`)
+      .forEach((element) => {
+        element.addEventListener(`click`, this._clickHandler);
+      });
   }
 }

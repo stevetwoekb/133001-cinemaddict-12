@@ -1,4 +1,4 @@
-import {getRandomInteger} from '../utils.js';
+import {getRandomInteger} from '../utils/common.js';
 
 const MIN_MOVIE_WATCH = 0;
 const MAX_MOVIE_WATCH = 30;

@@ -1,4 +1,4 @@
-import {createElement} from '../utils.js';
+import Abstract from "./abstract.js";
 import {generateUserMovieWatch} from '../mock/user.js';
 
 const generateUserStatus = () => {
@@ -28,24 +28,8 @@ const createProfileTemplate = () => {
   );
 };
 
-export default class Profile {
-  constructor() {
-    this._element = null;
-  }
-
+export default class Profile extends Abstract {
   getTemplate() {
     return createProfileTemplate();
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }

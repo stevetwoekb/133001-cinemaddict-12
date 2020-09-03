@@ -1,4 +1,4 @@
-import {createElement} from '../utils.js';
+import Abstract from './abstract.js';
 
 const createFilmsWrapperTemplate = () => {
   return (
@@ -7,24 +7,8 @@ const createFilmsWrapperTemplate = () => {
 };
 
 
-export default class FilmsWrapper {
-  constructor() {
-    this._element = null;
-  }
-
+export default class FilmsWrapper extends Abstract {
   getTemplate() {
     return createFilmsWrapperTemplate();
-  }
-
-  getElement() {
-    if (!this._element) {
-      this._element = createElement(this.getTemplate());
-    }
-
-    return this._element;
-  }
-
-  removeElement() {
-    this._element = null;
   }
 }
