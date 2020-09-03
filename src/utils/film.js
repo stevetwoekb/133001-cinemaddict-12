@@ -21,3 +21,12 @@ export const formatTime = (time) => {
 export const formatDateRelease = (date) =>{
   return moment(date).format(`DD MMMM YYYY`);
 };
+
+
+export const sortFilmDate = (firstFilm, secondFilm) => {
+  return firstFilm.releaseDate.getTime() - secondFilm.releaseDate.getTime();
+};
+
+export const sortFilmRating = (firstFilm, secondFilm) => {
+  return firstFilm.rating - secondFilm.rating;
+};

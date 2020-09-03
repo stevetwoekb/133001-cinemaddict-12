@@ -1,6 +1,5 @@
 import Profile from "./view/profile.js";
 import Navigation from './view/navigation.js';
-import Sorting from './view/sorting.js';
 import FilmsWrapper from './view/films-wrapper.js';
 import FooterStatistic from './view/footer-statistic.js';
 import {generateFilmCard} from './mock/film-card.js';
@@ -18,7 +17,6 @@ const mainElement = document.querySelector(`.main`);
 
 render(headerElement, new Profile());
 render(mainElement, new Navigation(filters));
-render(mainElement, new Sorting());
 render(mainElement, new FilmsWrapper());
 
 const filmsWrapperElement = mainElement.querySelector(`.films`);
