@@ -28,7 +28,8 @@ export default class Sorting extends Abstract {
     }
 
     evt.preventDefault();
-    this.getElement();
+    this.getElement().querySelector(`.sort__button--active`).classList.remove(`sort__button--active`);
+
 
     evt.target.classList.add(`sort__button--active`);
     this._callback(evt.target.dataset.sortType);

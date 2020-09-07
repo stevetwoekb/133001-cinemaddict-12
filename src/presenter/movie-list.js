@@ -45,7 +45,7 @@ export default class MovieList {
 
   _clearFilmsList() {
     this._filmsContainer.innerHTML = ``;
-    this._renderedFilmCount = FILM_CARD_PER_STEP;
+    this._filmCardPerStep = FILM_CARD_PER_STEP;
   }
 
   _renderFilmsList() {
